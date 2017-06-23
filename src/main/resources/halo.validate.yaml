@@ -1,0 +1,6 @@
+validate:
+    message:
+      required: 不能为空
+      maxlength: 长度不能超过{0}
+      minlength: 长度不能小于{0}
+    packagesToScan: com.dasuanzhuang.halo.test
