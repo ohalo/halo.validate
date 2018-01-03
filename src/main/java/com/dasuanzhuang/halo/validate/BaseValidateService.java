@@ -12,7 +12,7 @@ import com.dasuanzhuang.halo.validate.annotation.Rule;
 import com.dasuanzhuang.halo.validate.annotation.Validate;
 import com.dasuanzhuang.halo.validate.api.Validation;
 import com.dasuanzhuang.halo.validate.error.ValidateException;
-import com.dasuanzhuang.halo.validate.yaml.ValidateYaml;
+import com.dasuanzhuang.halo.validate.load.ValidateProperties;
 
 public class BaseValidateService implements IValidateService {
 
@@ -23,7 +23,7 @@ public class BaseValidateService implements IValidateService {
         if (validator == null) { throw new ValidateException(attrName, ruleValue + "规则错误，请检查！"); }
         String message = rule.message();
         if (message == null || message.trim().equals("")) {
-            message = ValidateYaml.getInstance().getMessage().get(ruleValues[0]);
+            message = ValidateProperties.getMessage().get(ruleValues[0]);
         }
 
         Boolean flag = false;
